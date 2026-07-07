@@ -7,3 +7,6 @@ transform = Transform3D(3.291729, 0, 0, 0, 0.30450386, 0, 0, 0, 3.5139074, 0, 0,
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=515497290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59402204, 2.2257056)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=105710427]
+transform = Transform3D(0.17347324, 0, 0, 0, 0.17347324, 0, 0, 0, 0.17347324, 0, 0.75081956, -3.2107396)
