@@ -15,5 +15,8 @@ size = Vector3(1, 1, 0.51123047)
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=144272389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5002582, 1.0680563, -1.4830836)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGSphere3D" unique_id=537600524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3015776, -1.3884122, -3.2001247)
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="." unique_id=537600524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8013194, -0.3203559, -4.6832085)
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="." unique_id=1871751727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9349684, 0.4877386, -7.855726)
