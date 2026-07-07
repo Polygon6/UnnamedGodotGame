@@ -9,8 +9,7 @@ transform = Transform3D(3.291729, 0, 0, 0, 0.30450386, 0, 0, 0, 3.5139074, 0, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59402204, 2.2257056)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=105710427]
-transform = Transform3D(0.17347324, 0, 0, 0, 0.17347324, 0, 0, 0, 0.17347324, 0, 0.75081956, -3.2531338)
-size = Vector3(1, 1, 0.51123047)
+transform = Transform3D(0.17347324, 0, 0, 0, 0.17347324, 0, 0, 0, 0.17347324, 0, 0.75081956, -3.2927432)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=144272389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5002582, 1.0680563, -1.4830836)
@@ -23,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9349684, 0.4877386, -7.855
 
 [node name="CSGSphere3D4" type="CSGSphere3D" parent="." unique_id=296313050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.440744, -0.6407118, -6.46111)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=1752276430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017392159, 0, -3.334989)
