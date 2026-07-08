@@ -29,5 +29,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.440744, -0.6407118, -6.4611
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017392159, 0, -3.334989)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=268063604]
-transform = Transform3D(0.37958428, 0, 0, 0, 0.46028972, 0, 0, 0, 0.41751024, 0, 2.1575375, 0)
+transform = Transform3D(0.37958428, 0, 0, 0, 0.46028972, 0, 0, 0, 0.41751024, 0, 0.28505754, -6.480682)
 mesh = SubResource("CapsuleMesh_m40kh")
