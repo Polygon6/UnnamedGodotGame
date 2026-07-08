@@ -1,3 +1,6 @@
+CSGMesh3D
+Area3D
+CollisionShape3D
 CSGTorus3D
 CSGSphere3D
 CSGBox3D
