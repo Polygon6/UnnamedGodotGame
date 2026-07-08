@@ -1,14 +1,5 @@
-Node3D
 Camera3D
 MeshInstance3D
-Node
 CharacterBody3D
-TileMapLayer
-CSGCylinder3D
-CSGCombiner3D
 CSGBox3D
-CSGMesh3D
-Area3D
-CollisionShape3D
-CSGTorus3D
-CSGSphere3D
+CSGCylinder3D
