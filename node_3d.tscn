@@ -34,7 +34,7 @@ use_collision = true
 size = Vector3(1, 0.1, 1)
 
 [node name="walls" type="CSGBox3D" parent="." unique_id=574661217]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.3, -1.0918896, 0.99283445, 0.77843684)
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.3, -1.0741398, 0.9792968, 0.7766425)
 use_collision = true
 size = Vector3(0.2, 2, 18.800001)
 
@@ -53,8 +53,8 @@ radius = 0.3
 height = 0.8
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="walls" unique_id=783478026]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.7727406, -0.25881904, 0, 0.20705523, 0.96592575, 0.5500003, -0.6694171, 6.8075542)
-size = Vector3(0.90000004, 0.3, 3.4)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.7727406, -0.25881904, 0, 0.20705523, 0.96592575, 0.51499045, -0.6694171, 6.8075542)
+size = Vector3(0.9700196, 0.3, 3.4)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="walls" unique_id=2040775287]
 transform = Transform3D(2.7777777, 0, 0, 0, 1, 0, 0, 0, 11.111111, 5.0611124, -0.56, 0.73333144)
@@ -67,6 +67,7 @@ size = Vector3(0.075375974, 0.88, 0.026240233)
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=669146898]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.7233647, 1.1547556, -1.3423014)
 script = ExtResource("1_a202f")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1080777976]
 transform = Transform3D(0.20000002, 0, 0, 0, 0.2, 0, 0, 0, 0.20000002, 0, -0.75049704, 0)

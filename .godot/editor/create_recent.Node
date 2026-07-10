@@ -1,6 +1,6 @@
 Node3D
+CSGBox3D
 Camera3D
 MeshInstance3D
 CharacterBody3D
-CSGBox3D
 CSGCylinder3D
