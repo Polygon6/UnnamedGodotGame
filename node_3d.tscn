@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://45pyhqfmhaxb"]
+[gd_scene format=3 uid="uid://dr6m5pr51ix2n"]
 
-[ext_resource type="Script" uid="uid://c7dun3jrde12g" path="res://scripts/solo/character_body_3d.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://cgfko4pqpkc16" path="res://scripts/character_body_3d.gd" id="1_a202f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,65 +19,73 @@ glow_enabled = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4xowi"]
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
-[node name="Node3D" type="Node3D" unique_id=1889541636]
+[node name="Node3D" type="Node3D" unique_id=1314223690]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1876996428]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1735213288]
 environment = SubResource("Environment_noarx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1301283533]
-transform = Transform3D(0.8660255, -0.43301263, 0.24999988, 2.7805944e-08, 0.49999994, 0.86602545, -0.49999994, -0.7500001, 0.43301266, 2.1000001, 1.9708037, 6.336215)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=810041062]
+transform = Transform3D(0.86602545, 0.4330127, -0.24999996, 2.7805946e-08, 0.49999994, 0.86602545, 0.49999997, -0.75000006, 0.4330126, 2.625, 9.093267, -97.54663)
 shadow_enabled = true
 
-[node name="baseplate" type="CSGBox3D" parent="." unique_id=1013154687]
-transform = Transform3D(6.6, 0, 0, 0, 1, 0, 0, 0, 7.7000003, 0, -0.05, 0)
+[node name="baseplate" type="CSGBox3D" parent="." unique_id=678577668]
 use_collision = true
-size = Vector3(1, 0.1, 1)
+size = Vector3(80, 0.1, 80)
+metadata/_edit_lock_ = true
 
-[node name="walls" type="CSGBox3D" parent="." unique_id=574661217]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.3, -1.0741398, 0.9792968, 0.7766425)
+[node name="walls" type="CSGBox3D" parent="." unique_id=1179033938]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.400002, 4.85, -17.4)
 use_collision = true
-size = Vector3(0.2, 2, 18.800001)
+size = Vector3(0.3, 3.2, 7.7000003)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="walls" unique_id=963936738]
-transform = Transform3D(1.6666666, 0, 0, 0, 1, 0, 0, 0, 3.3333333, 0.5, -0.14999998, 0.73333263)
-size = Vector3(0.6, 0.1, 1)
+[node name="CSGBox3D3" type="CSGBox3D" parent="walls" unique_id=191644679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71, 0, 4.95)
+size = Vector3(0.3, 3.2, 8.6)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="walls" unique_id=2096066977]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.3, 1.5566669, 0, -10.228332)
-size = Vector3(0.2, 2, 21.300001)
+[node name="CSGBox3D4" type="CSGBox3D" parent="walls" unique_id=2093615517]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 1.7000002, 0, 12.5)
+size = Vector3(0.3, 3.2, 7.7000003)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="walls" unique_id=1239010542]
-transform = Transform3D(-9.179392e-08, 1, 0, -2.1, -4.371139e-08, 0, 0, 0, 2.8000002, 0.10000014, -0.9, -2.5666668)
-operation = 2
-radius = 0.3
-height = 0.8
+[node name="CSGBox3D4" type="CSGBox3D" parent="walls/CSGBox3D4" unique_id=1163159396]
+transform = Transform3D(1, 0, 0, 0, 0.8660253, -0.49999997, 0, 0.49999997, 0.8660254, -0.95165014, -1.2625, 2.8060777)
+size = Vector3(1.6, 0.3, 3.15)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="walls" unique_id=783478026]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.7727406, -0.25881904, 0, 0.20705523, 0.96592575, 0.51499045, -0.6694171, 6.8075542)
-size = Vector3(0.9700196, 0.3, 3.4)
+[node name="CSGBox3D5" type="CSGBox3D" parent="walls/CSGBox3D4" unique_id=2091839777]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 2.9802322e-08, 0, 0, 1, -0.9516504, -0.4625002, -2.4189231)
+size = Vector3(1.6, 0.3, 1.3000001)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="walls" unique_id=2040775287]
-transform = Transform3D(2.7777777, 0, 0, 0, 1, 0, 0, 0, 11.111111, 5.0611124, -0.56, 0.73333144)
-size = Vector3(0.2, 0.88, 0.29)
+[node name="CSGBox3D6" type="CSGBox3D" parent="walls/CSGBox3D4" unique_id=1317353542]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 0.99999994, 2.9802322e-08, -0.70710677, 0, 0.70710677, -8.457591, -0.47250044, -4.7134857)
+size = Vector3(1.6, 0.3, 1.3000001)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="walls" unique_id=386488445]
-transform = Transform3D(7.7160482, 0, 0, 0, 1, 0, 0, 0, 123.45677, 2.9722872, -0.55499995, 0.72836757)
-size = Vector3(0.075375974, 0.88, 0.026240233)
+[node name="CSGBox3D7" type="CSGBox3D" parent="walls/CSGBox3D4" unique_id=1660313078]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 0.99999994, 2.9802322e-08, -0.70710677, 0, 0.70710677, -12.770944, -0.47250044, -9.026838)
+size = Vector3(1.6, 0.3, 1.3000001)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=669146898]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 1.7233647, 1.1547556, -1.3423014)
+[node name="CSGBox3D" type="CSGBox3D" parent="walls" unique_id=1655543957]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 1.0403805, -0.95750004, 8.440381)
+size = Vector3(1.3000001, 1.285, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="walls" unique_id=1923684902]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.4091884, -0.96000004, 6.9908123)
+size = Vector3(1.3000001, 1.28, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="walls" unique_id=229227773]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.8587573, -0.96000004, 5.5412436)
+size = Vector3(1.3000001, 1.28, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
 script = ExtResource("1_a202f")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1080777976]
-transform = Transform3D(0.20000002, 0, 0, 0, 0.2, 0, 0, 0, 0.20000002, 0, -0.75049704, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=2120581730]
 mesh = SubResource("CapsuleMesh_bs3a7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1573778350]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.75049704, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1535467402]
 shape = SubResource("ConvexPolygonShape3D_4xowi")
 
-[node name="Node3D" type="Node3D" parent="CharacterBody3D" unique_id=1647268364]
+[node name="head" type="Node3D" parent="CharacterBody3D" unique_id=1835031139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6500001, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D" unique_id=2067319135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6108993, 0)
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/head" unique_id=1622715404]

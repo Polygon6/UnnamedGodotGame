@@ -1,8 +1,6 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1783710347
-icon.svg::CompressedTexture2D::6776070030770882395::1783540710::1783540713::1::::<><><>0<>0<>836c6b00d4947f77cb07624144507532<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-node_3d.tscn::PackedScene::2098361804693757607::1783710304::0::1::::<><><>0<>0<><>::uid://c7dun3jrde12g::::res://scripts/solo/character_body_3d.gd
-::res://scripts/::1783541918
-::res://scripts/recurring/::1783541918
-::res://scripts/solo/::1783710227
-character_body_3d.gd::GDScript::7026316537575153844::1783710227::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://::1783721859
+icon.svg::CompressedTexture2D::7104364546637448711::1783720754::1783720757::1::::<><><>0<>0<>4c6a10846bddd815be220bb06de6e2af<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+node_3d.tscn::PackedScene::8417251096542127839::1783722018::0::1::::<><><>0<>0<><>::
+::res://scripts/::0
+::res://scripts/sols/::0
