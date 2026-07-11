@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
-const g = Vector3(0, -24, 0)
-const speed = 9
-const jUp = 15
-const s = 0.02
+
+const g = Vector3(0, -9.8, 0)
+@export var speed : int   # = 9
+@export var jUp : int     # = 10
+@export var s : float     # = 0.02
 
 @onready var cam = $head/Camera3D
 @onready var head = $head
@@ -27,9 +28,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jUp
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("a", "d", "w", "s")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
