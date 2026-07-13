@@ -91,8 +91,7 @@ func _physics_process(delta: float) -> void:
 			if direction:
 				velocity.x = direction.x * state.moveSpeed
 				velocity.z = direction.z * state.moveSpeed
-			else: #check later
-				velocity.x = move_toward(velocity.x, 0, state.moveSpeed)
-				velocity.z = move_toward(velocity.z, 0, state.moveSpeed)
+			else:
+				velocity = Vector3(0, 0, 0)
 
 			move_and_slide()
