@@ -77,8 +77,7 @@ size = Vector3(1.3000001, 1.28, 1)
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
 script = ExtResource("1_a202f")
-speed = 9
-jUp = 10
+jUp = 8
 s = 0.02
 metadata/_edit_group_ = true
 
@@ -88,7 +87,9 @@ mesh = SubResource("CapsuleMesh_ihnlv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1535467402]
 shape = SubResource("ConvexPolygonShape3D_4xowi")
 
-[node name="head" type="Node3D" parent="CharacterBody3D" unique_id=1835031139]
+[node name="axis" type="Node3D" parent="CharacterBody3D" unique_id=1835031139]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6500001, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/head" unique_id=1622715404]
+[node name="atlas" type="Node3D" parent="CharacterBody3D/axis" unique_id=697838753]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/axis/atlas" unique_id=1622715404]

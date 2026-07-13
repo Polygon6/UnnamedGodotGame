@@ -1,6 +1,6 @@
 MeshInstance3D
+Node3D
 CSGBox3D
 RigidBody3D
 Camera3D
-Node3D
 CharacterBody3D
