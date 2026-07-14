@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const g = Vector3(0, -9.8, 0)
+const g = Vector3(0, 9.8, 0)
 @export var jUp : int     # = 10
 @export var s : float     # = 0.02
 
@@ -19,6 +19,16 @@ var states = {
 	},
 	"air":{
 		"moveSpeed" : 0.3,
+	},
+	"slide":{
+		"moveSpeed" : 0.3,
+		"speedLoss" : 0.006,
+		"stopSpeed" : 3,
+	},
+	"sprint":{
+		"moveSpeed" : 0.5,
+		"maxSpeed" : 20,
+		"acceleration" : 0.1
 	},
 }
 
@@ -38,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	match state:
 		states.air:
 			#gravity
-			velocity += g * delta
+			velocity -= g * delta
 
 			#get the input direction and handle the movement
 			inputDirection = Input.get_vector("a", "d", "w", "s")
@@ -54,7 +64,12 @@ func _physics_process(delta: float) -> void:
 
 			#update state
 			if is_on_floor():
-				state = states.walk
+				if Input.is_action_pressed("ctrl"):
+					state = states.slide
+				elif Input.is_action_pressed("shift"):
+					state = states.sprint
+				else:
+					state = states.walk
 
 		states.walk:
 			#get the input direction and handle the movement
@@ -67,9 +82,72 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector3(0, velocity.y, 0)
 				
-			#handle jump
-			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			#update state and handle jump
+			if not is_on_floor():
+				state = states.air
+			elif Input.is_action_just_pressed("space"):
 				velocity.y = jUp
 				state = states.air
+			elif Input.is_action_just_pressed("ctrl"):
+				state = states.slide
+			elif Input.is_action_just_pressed("shift"):
+				state = states.sprint
+
+			move_and_slide()
+
+		states.slide:
+			#get the input direction and handle the movement
+			inputDirection = Input.get_vector("a", "d", "w", "s")
+			direction = (axis.transform.basis * Vector3(inputDirection.x, 0, inputDirection.y)).normalized()
+
+			if direction:
+				velocity = (velocity + direction*state.moveSpeed).normalized()*velocity.length()
+
+			#friction
+			velocity = velocity * (1-state.speedLoss)
+
+			if velocity.length() < state.stopSpeed:
+				velocity = Vector3(0, velocity.y, 0)
+
+			#update state and handle jump
+			if not is_on_floor():
+				state = states.air
+			elif Input.is_action_just_pressed("space"):
+				velocity.y = jUp
+				state = states.air
+			elif Input.is_action_just_released("ctrl"):
+				if Input.is_action_pressed("shift"):
+					state = states.sprint
+				else:
+					state = states.walk
+
+			move_and_slide()
+
+		states.sprint:
+			#get the input direction and handle the movement and friction
+			inputDirection = Input.get_vector("a", "d", "w", "s")
+			direction = (axis.transform.basis * Vector3(inputDirection.x, 0, inputDirection.y)).normalized()
+
+			if direction:
+				#accelerate
+				if velocity.length() < state.maxSpeed:
+					velocity.x += direction.x * state.acceleration
+					velocity.z += direction.z * state.acceleration
+				elif velocity.length() > state.maxSpeed:
+					velocity = velocity.normalized()*state.maxSpeed
+
+				#turn
+				velocity = (velocity + direction*state.moveSpeed).normalized()*velocity.length()
+
+			#update state and handle jump
+			if not is_on_floor():
+				state = states.air
+			elif Input.is_action_just_pressed("space"):
+				velocity.y = jUp
+				state = states.air
+			elif Input.is_action_just_pressed("ctrl"):
+				state = states.slide
+			elif Input.is_action_just_released("shift"):
+				state = states.walk
 
 			move_and_slide()
