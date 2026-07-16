@@ -30,6 +30,10 @@ var states = {
 		"maxSpeed" : 20,
 		"acceleration" : 0.1
 	},
+	"wallrun":{
+		"speedLoss" : 0.006,
+		"stopSpeed" : 3,
+	},
 }
 
 var state = states.air
@@ -60,8 +64,6 @@ func _physics_process(delta: float) -> void:
 				if (velocity + direction).length() < velocity.length():
 					velocity += direction*state.moveSpeed
 
-			move_and_slide()
-
 			#update state
 			if is_on_floor():
 				if Input.is_action_pressed("ctrl"):
@@ -70,6 +72,10 @@ func _physics_process(delta: float) -> void:
 					state = states.sprint
 				else:
 					state = states.walk
+			elif Input.is_action_pressed("q"):
+				state = states.wallrun
+
+			move_and_slide()
 
 		states.walk:
 			#get the input direction and handle the movement
@@ -149,5 +155,24 @@ func _physics_process(delta: float) -> void:
 				state = states.slide
 			elif Input.is_action_just_released("shift"):
 				state = states.walk
+
+			move_and_slide()
+
+		states.wallrun:
+			#gravity
+			velocity -= g * delta
+
+			#get wall direaction and push against wall
+			var wallDirection = Vector3(10, 0, 0)
+			velocity += wallDirection
+
+			#update state and handle wall jump
+			if is_on_floor():
+				if Input.is_action_pressed("ctrl"):
+					state = states.slide
+				elif Input.is_action_pressed("shift"):
+					state = states.sprint
+				else:
+					state = states.walk
 
 			move_and_slide()
