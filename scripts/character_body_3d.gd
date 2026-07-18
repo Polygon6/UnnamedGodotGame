@@ -8,6 +8,9 @@ const g = Vector3(0, 9.8, 0)
 @onready var atlas = $axis/atlas
 @onready var axis = $axis
 
+@onready var rayR = $axis/rayR
+@onready var rayL = $axis/rayL
+
 #for movement
 var inputDirection
 var direction
@@ -163,8 +166,16 @@ func _physics_process(delta: float) -> void:
 			velocity -= g * delta
 
 			#get wall direaction and push against wall
-			var wallDirection = Vector3(10, 0, 0)
+			var wallDirection = Vector3(0, 0, 0)
 			velocity += wallDirection
+
+			rayR.force_raycast_update()
+			rayL.force_raycast_update()
+
+			var rayRrot = rayR.global_rotation.y
+			var rayLrot = rayL.global_rotation.y
+			print(rad_to_deg( rayR.get_collision_normal().angle_to(Vector3(sin(rayRrot), 0, cos(rayRrot))) ))
+			print(rad_to_deg( rayL.get_collision_normal().angle_to(Vector3(sin(rayLrot), 0, cos(rayLrot))) ))
 
 			#update state and handle wall jump
 			if is_on_floor():

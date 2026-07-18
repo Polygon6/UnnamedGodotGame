@@ -93,3 +93,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6500001, 0)
 [node name="atlas" type="Node3D" parent="CharacterBody3D/axis" unique_id=697838753]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/axis/atlas" unique_id=1622715404]
+
+[node name="rayR" type="RayCast3D" parent="CharacterBody3D/axis" unique_id=566068409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+enabled = false
+target_position = Vector3(0.75, 0, 0)
+
+[node name="rayL" type="RayCast3D" parent="CharacterBody3D/axis" unique_id=323471164]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, -1, 0)
+enabled = false
+target_position = Vector3(0.75, 0, 0)

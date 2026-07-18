@@ -1,6 +1,6 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1784148757
+::res://::1784402643
 icon.svg::CompressedTexture2D::7104364546637448711::1783720754::1783720757::1::::<><><>0<>0<>4c6a10846bddd815be220bb06de6e2af<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-node_3d.tscn::PackedScene::8417251096542127839::1784050808::0::1::::<><><>0<>0<><>::uid://cgfko4pqpkc16::::res://scripts/character_body_3d.gd
-::res://scripts/::1784050763
-character_body_3d.gd::GDScript::5204930036123656987::1784050763::0::1::::<>CharacterBody3D<><>0<>0<><>::
+node_3d.tscn::PackedScene::8417251096542127839::1784150632::0::1::::<><><>0<>0<><>::uid://cgfko4pqpkc16::::res://scripts/character_body_3d.gd
+::res://scripts/::1784149942
+character_body_3d.gd::GDScript::5204930036123656987::1784149942::0::1::::<>CharacterBody3D<><>0<>0<><>::
