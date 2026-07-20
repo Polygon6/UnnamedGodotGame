@@ -11,13 +11,15 @@ const g = Vector3(0, 9.8, 0)
 @onready var rayR = $axis/rayR
 @onready var rayL = $axis/rayL
 
-#for movement
+#for general movement
 var inputDirection
 var direction
 
 #for wallrun
 var wallDirection
 var wallSide
+var firstExcept = true
+var wall
 
 #states dictionary
 var states = {
@@ -38,7 +40,7 @@ var states = {
 		"acceleration" : 0.1
 	},
 	"wallrun":{
-		"pullStrength" : 100,
+		"pullStrength" : 10,
 		"speedLoss" : 0.006,
 		"detachAngle" : 85,
 	},
@@ -189,28 +191,35 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 			#update state and handle wall jump
-			print(get_slide_collision(0))
-			print(get_slide_collision(0) == null)
-			print(get_slide_collision(0))
-			print((wallSide == "R" && abs(parallelAngleR) > state.detachAngle) || (wallSide == "L" && abs(parallelAngleL) > state.detachAngle))
-			print(velocity)
+			print(wall == null, firstExcept)
+			#print(get_slide_collision(0))
+			#print((wallSide == "R" && abs(parallelAngleR) > state.detachAngle) || (wallSide == "L" && abs(parallelAngleL) > state.detachAngle))
+			#print(velocity)
 			if is_on_floor():
+				firstExcept = true
+
 				if Input.is_action_pressed("ctrl"):
 					state = states.slide
 				elif Input.is_action_pressed("shift"):
 					state = states.sprint
 				else:
 					state = states.walk
-			elif (get_slide_collision(0) == null): #went off the wall
-				velocity -= wallDirection*state.pullStrength*-1
+			elif (wall == null && !firstExcept): #went off the wall
+				#velocity -= wallDirection*state.pullStrength*-1
 				state = states.air
-				print("exit velocity:	",velocity)
+				firstExcept = true
+				#print("exit velocity:	",velocity)
 			elif (wallSide == "R" && abs(parallelAngleR) > state.detachAngle) || (wallSide == "L" && abs(parallelAngleL) > state.detachAngle): #turned away
 				state = states.air
-				print("exit velocity:	",velocity)
+				firstExcept = true
+				#print("exit velocity:	",velocity)
 
 			#actual wallrun code
 			if (state == states.wallrun):
+				#I have absolutely no idea why I need to have this
+				firstExcept = false
+				print("ran")
+
 				#gravity
 				velocity -= g * delta
 
@@ -218,4 +227,5 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity * (1-state.speedLoss)
 
 				#push against wall
-				velocity += wallDirection*state.pullStrength*-1
+				#velocity += wallDirection*state.pullStrength*-1
+				wall = move_and_collide(wallDirection*state.pullStrength*-1)
