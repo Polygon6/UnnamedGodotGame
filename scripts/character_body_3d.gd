@@ -15,6 +15,10 @@ const g = Vector3(0, 9.8, 0)
 var inputDirection
 var direction
 
+#for wallrun
+var wallDirection
+var wallSide
+
 #states dictionary
 var states = {
 	"walk":{
@@ -34,8 +38,9 @@ var states = {
 		"acceleration" : 0.1
 	},
 	"wallrun":{
+		"pullStrength" : 100,
 		"speedLoss" : 0.006,
-		"stopSpeed" : 3,
+		"detachAngle" : 85,
 	},
 }
 
@@ -162,22 +167,33 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 		states.wallrun:
-			#gravity
-			velocity -= g * delta
-
-			#get wall direaction and push against wall
-			var wallDirection = Vector3(0, 0, 0)
-			velocity += wallDirection
-
+			#raycast
 			rayR.force_raycast_update()
 			rayL.force_raycast_update()
 
+			#get rotation
 			var rayRrot = rayR.global_rotation.y
 			var rayLrot = rayL.global_rotation.y
-			print(rad_to_deg( rayR.get_collision_normal().angle_to(Vector3(sin(rayRrot), 0, cos(rayRrot))) ))
-			print(rad_to_deg( rayL.get_collision_normal().angle_to(Vector3(sin(rayLrot), 0, cos(rayLrot))) ))
+			var parallelAngleR = rad_to_deg( rayR.get_collision_normal().angle_to(Vector3(sin(rayRrot), 0, cos(rayRrot))) )-90
+			var parallelAngleL = rad_to_deg( rayL.get_collision_normal().angle_to(Vector3(sin(rayLrot), 0, cos(rayLrot))) )-90
+
+			#get wall direaction
+			if (rayR.is_colliding()):
+				wallDirection = rayR.get_collision_normal()
+				wallSide = "R"
+			if (rayL.is_colliding()):
+				wallDirection = rayL.get_collision_normal()
+				wallSide = "L"
+
+			#in wallrunning specifically this has to be called before handling states to make sure get_slide_collision works
+			move_and_slide()
 
 			#update state and handle wall jump
+			print(get_slide_collision(0))
+			print(get_slide_collision(0) == null)
+			print(get_slide_collision(0))
+			print((wallSide == "R" && abs(parallelAngleR) > state.detachAngle) || (wallSide == "L" && abs(parallelAngleL) > state.detachAngle))
+			print(velocity)
 			if is_on_floor():
 				if Input.is_action_pressed("ctrl"):
 					state = states.slide
@@ -185,5 +201,21 @@ func _physics_process(delta: float) -> void:
 					state = states.sprint
 				else:
 					state = states.walk
+			elif (get_slide_collision(0) == null): #went off the wall
+				velocity -= wallDirection*state.pullStrength*-1
+				state = states.air
+				print("exit velocity:	",velocity)
+			elif (wallSide == "R" && abs(parallelAngleR) > state.detachAngle) || (wallSide == "L" && abs(parallelAngleL) > state.detachAngle): #turned away
+				state = states.air
+				print("exit velocity:	",velocity)
 
-			move_and_slide()
+			#actual wallrun code
+			if (state == states.wallrun):
+				#gravity
+				velocity -= g * delta
+
+				#friction
+				velocity = velocity * (1-state.speedLoss)
+
+				#push against wall
+				velocity += wallDirection*state.pullStrength*-1

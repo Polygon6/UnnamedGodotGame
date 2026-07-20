@@ -1,7 +1,7 @@
+CSGBox3D
 MeshInstance3D
 RayCast3D
 Node3D
-CSGBox3D
 RigidBody3D
 Camera3D
 CharacterBody3D
