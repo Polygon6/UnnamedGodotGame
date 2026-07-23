@@ -25,7 +25,7 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 environment = SubResource("Environment_noarx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=810041062]
-transform = Transform3D(0.86602545, 0.4330127, -0.24999996, 2.7805946e-08, 0.49999994, 0.86602545, 0.49999997, -0.75000006, 0.4330126, 2.625, 9.093267, -97.54663)
+transform = Transform3D(0.86602545, 0.4330127, -0.24999997, 2.7805946e-08, 0.49999994, 0.86602545, 0.49999997, -0.75000006, 0.43301263, 2.625, 9.093267, -149.84663)
 shadow_enabled = true
 
 [node name="baseplate" type="CSGBox3D" parent="." unique_id=678577668]
@@ -37,6 +37,22 @@ metadata/_edit_lock_ = true
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.400002, 4.85, -17.4)
 use_collision = true
 size = Vector3(0.3, 3.2, 7.7000003)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="walls" unique_id=389944753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.280002, 1.3249999, 6.9916663)
+size = Vector3(0.3, 5.85, 16.25)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="walls" unique_id=1270639892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.046668, 1.3249999, 16.808334)
+size = Vector3(0.3, 5.85, 16.25)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="walls" unique_id=1966357706]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -16.296669, 1.3249999, 34.975002)
+size = Vector3(0.3, 5.85, 8.25)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="walls" unique_id=1767564465]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -10.680002, 1.3249999, 34.975002)
+size = Vector3(0.3, 5.85, 8.25)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="walls" unique_id=191644679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71, 0, 4.95)
@@ -74,6 +90,37 @@ size = Vector3(1.3000001, 1.28, 1)
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -1.8587573, -0.96000004, 5.5412436)
 size = Vector3(1.3000001, 1.28, 1)
 
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="walls" unique_id=864105618]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, -4.883333, 0.5500001, -7.216666)
+height = 4.3
+sides = 40
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="walls" unique_id=176699778]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 7.133334, 0.5500001, -15.783334)
+height = 4.3
+sides = 40
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="walls/CSGCylinder3D4" unique_id=1835788467]
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0, 0)
+operation = 2
+height = 4.3
+sides = 40
+
+[node name="CSGBox3D" type="CSGBox3D" parent="walls/CSGCylinder3D4" unique_id=1875011703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15000002, -0.45000002, -0.54166687, 0)
+operation = 2
+size = Vector3(0.2, 3.25, 1)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="walls" unique_id=677749471]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -11.416667, 0.5500001, -7.2166653)
+height = 4.3
+sides = 40
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="walls" unique_id=2125189577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.783333, 0.5500001, -7.2166653)
+height = 4.3
+sides = 40
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
 script = ExtResource("1_a202f")
@@ -97,9 +144,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6500001, 0)
 [node name="rayR" type="RayCast3D" parent="CharacterBody3D/axis" unique_id=566068409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 enabled = false
-target_position = Vector3(1, 0, 0)
+target_position = Vector3(3, 0, 0)
 
 [node name="rayL" type="RayCast3D" parent="CharacterBody3D/axis" unique_id=323471164]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, -1, 0)
 enabled = false
-target_position = Vector3(1, 0, 0)
+target_position = Vector3(3, 0, 0)
