@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 
 const g = Vector3(0, 9.8, 0)
-@export var jUp : int     # = 10
+var jUp = 8
+
 @export var s : float     # = 0.02
 
 @onready var atlas = $axis/atlas
@@ -10,6 +11,8 @@ const g = Vector3(0, 9.8, 0)
 
 @onready var rayR = $axis/rayR
 @onready var rayL = $axis/rayL
+
+@onready var timer = $Timer
 
 #for general movement
 var inputDirection
@@ -19,6 +22,9 @@ var direction
 var wallAngle
 var wallDirection
 var ray
+var collision
+var wallrunCooldown = 0
+var lastNormal
 
 #states dictionary
 var states = {
@@ -39,11 +45,16 @@ var states = {
 		"acceleration" : 0.1
 	},
 	"wallrun":{
-		"pseudoGravity" : g/4,
+		"pseudoGravity" : g,
 		"pullStrength" : 1,
 		"speedLoss" : 0.003,
-		"detachAngle" : 85,
-		"attachAngle" : 60,
+		"detachAngle" : 80,
+		"attachAngle1" : -60,
+		"attachAngle2" : 10,
+
+		"walljumpUp" : 2,
+		"walljumpForward" : 6,
+		"walljumpAway" : 16,
 	},
 }
 
@@ -57,6 +68,13 @@ func _unhandled_input(event: InputEvent):
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	timer.timeout.connect(_on_timeout)
+
+func _on_timeout():
+	if wallrunCooldown > 0:
+		wallrunCooldown -= 1
+	else:
+		timer.stop()
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -85,13 +103,15 @@ func _physics_process(delta: float) -> void:
 					state = states.sprint
 				else:
 					state = states.walk
-			elif (get_slide_collision_count() > 0) && (rayR.is_colliding() || rayL.is_colliding()):
-				state = states.wallrun
-
+			elif (get_slide_collision_count() > 0) && (rayR.is_colliding() || rayL.is_colliding()) && (wallrunCooldown <= 0):
 				if rayR.is_colliding():
 					ray = rayR
 				else:
 					ray = rayL
+
+				wallAngle = rad_to_deg(ray.get_collision_normal().angle_to(Vector3(sin(axis.global_rotation.y), 0, cos(axis.global_rotation.y))))-90
+				if (wallAngle < states.wallrun.attachAngle2) && (wallAngle >= states.wallrun.attachAngle1):
+					state = states.wallrun
 
 			move_and_slide()
 
@@ -177,15 +197,16 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 		states.wallrun:
-			print("wallrunning")
-			print(velocity)
-			print(Vector2(velocity.x, velocity.z).length())
-
 			#raycast
 			ray.force_raycast_update()
 
 			#update wall data
+			lastNormal = wallDirection
 			wallDirection = ray.get_collision_normal()
+			wallAngle = rad_to_deg(ray.get_collision_normal().angle_to(Vector3(sin(axis.global_rotation.y), 0, cos(axis.global_rotation.y))))-90
+
+			if lastNormal == null:
+				lastNormal = wallDirection
 
 			#gravity
 			velocity -= state.pseudoGravity * delta
@@ -195,7 +216,7 @@ func _physics_process(delta: float) -> void:
 			velocity.z = velocity.z * (1-state.speedLoss)
 
 			#cling to wall
-			move_and_collide(wallDirection*-1)
+			collision = move_and_collide(wallDirection*state.pullStrength*-1)
 
 			if ray == rayR:
 				velocity = Vector3(wallDirection.z*Vector2(velocity.x, velocity.z).length()*-1, velocity.y, wallDirection.x*Vector2(velocity.x, velocity.z).length())
@@ -210,5 +231,21 @@ func _physics_process(delta: float) -> void:
 					state = states.sprint
 				else:
 					state = states.walk
+
+				wallDirection = null
+			else:
+				if Input.is_action_just_pressed("space") || (collision == null) || (wallAngle > state.detachAngle) || (snapped(rad_to_deg(abs(lastNormal.angle_to(wallDirection))), 1) == 90):
+					velocity.y += state.walljumpUp 
+					if ray == rayR:
+						velocity += Vector3(velocity.normalized().x*state.walljumpForward, velocity.y, velocity.normalized().z*state.walljumpForward)
+						velocity += Vector3(velocity.normalized().z*state.walljumpAway, velocity.y, velocity.normalized().x*state.walljumpAway*-1)
+					else:
+						velocity += Vector3(velocity.normalized().x*state.walljumpForward, velocity.y, velocity.normalized().z*state.walljumpForward)
+						velocity += Vector3(velocity.normalized().z*state.walljumpAway*-1, velocity.y, velocity.normalized().x*state.walljumpAway)
+
+					state = states.air
+					wallrunCooldown = 5
+					timer.start()
+					wallDirection = null
 
 			move_and_slide()

@@ -42,8 +42,16 @@ size = Vector3(0.3, 3.2, 7.7000003)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.280002, 1.3249999, 6.9916663)
 size = Vector3(0.3, 5.85, 16.25)
 
+[node name="CSGBox3D11" type="CSGBox3D" parent="walls" unique_id=1286349425]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -23.280003, -5.5916667, 3.741668)
+size = Vector3(0.3, 5.85, 16.25)
+
 [node name="CSGBox3D7" type="CSGBox3D" parent="walls" unique_id=1270639892]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.046668, 1.3249999, 16.808334)
+size = Vector3(0.3, 5.85, 16.25)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="walls" unique_id=1787808515]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -24.713335, 1.3249999, 21.025002)
 size = Vector3(0.3, 5.85, 16.25)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="walls" unique_id=1966357706]
@@ -124,7 +132,6 @@ sides = 40
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
 script = ExtResource("1_a202f")
-jUp = 8
 s = 0.02
 metadata/_edit_group_ = true
 
@@ -150,3 +157,6 @@ target_position = Vector3(3, 0, 0)
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, -1, 0)
 enabled = false
 target_position = Vector3(3, 0, 0)
+
+[node name="Timer" type="Timer" parent="CharacterBody3D" unique_id=1472762514]
+wait_time = 0.1
