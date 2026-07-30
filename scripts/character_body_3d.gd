@@ -52,7 +52,7 @@ var states = {
 		"attachAngle1" : -60,
 		"attachAngle2" : 10,
 
-		"walljumpUp" : 2,
+		"walljumpUp" : 8,
 		"walljumpForward" : 6,
 		"walljumpAway" : 16,
 	},
@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	match state:
 		states.air:
 			#gravity
-			velocity -= g * delta
+			velocity -= (g * delta)
 
 			#get the input direction and handle the movement
 			inputDirection = Input.get_vector("a", "d", "w", "s")
@@ -209,7 +209,7 @@ func _physics_process(delta: float) -> void:
 				lastNormal = wallDirection
 
 			#gravity
-			velocity -= state.pseudoGravity * delta
+			velocity -= (state.pseudoGravity * delta)
 
 			#friction
 			velocity.x = velocity.x * (1-state.speedLoss)
@@ -235,13 +235,14 @@ func _physics_process(delta: float) -> void:
 				wallDirection = null
 			else:
 				if Input.is_action_just_pressed("space") || (collision == null) || (wallAngle > state.detachAngle) || (snapped(rad_to_deg(abs(lastNormal.angle_to(wallDirection))), 1) == 90):
-					velocity.y += state.walljumpUp 
+					velocity.y += state.walljumpUp
+				
 					if ray == rayR:
-						velocity += Vector3(velocity.normalized().x*state.walljumpForward, velocity.y, velocity.normalized().z*state.walljumpForward)
-						velocity += Vector3(velocity.normalized().z*state.walljumpAway, velocity.y, velocity.normalized().x*state.walljumpAway*-1)
+						velocity += Vector3(velocity.normalized().x*state.walljumpForward, 0, velocity.normalized().z*state.walljumpForward)
+						velocity += Vector3(velocity.normalized().z*state.walljumpAway, 0, velocity.normalized().x*state.walljumpAway*-1)
 					else:
-						velocity += Vector3(velocity.normalized().x*state.walljumpForward, velocity.y, velocity.normalized().z*state.walljumpForward)
-						velocity += Vector3(velocity.normalized().z*state.walljumpAway*-1, velocity.y, velocity.normalized().x*state.walljumpAway)
+						velocity += Vector3(velocity.normalized().x*state.walljumpForward, 0, velocity.normalized().z*state.walljumpForward)
+						velocity += Vector3(velocity.normalized().z*state.walljumpAway*-1, 0, velocity.normalized().x*state.walljumpAway)
 
 					state = states.air
 					wallrunCooldown = 5
