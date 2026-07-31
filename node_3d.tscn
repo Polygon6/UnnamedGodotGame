@@ -192,6 +192,102 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
+[node name="corridorToPassage2x2" type="CSGBox3D" parent="protoRooms" unique_id=1641858598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4, 0, -67.725)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoRooms/corridorToPassage2x2" unique_id=1967065746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorToPassage2x2" unique_id=2048111705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorToPassage2x2" unique_id=1231647170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorToPassage2x2/CSGBox3D2" unique_id=1781243761]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorToPassage2x2/CSGBox3D2" unique_id=794959480]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorToPassage2x2" unique_id=166371682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -8.999999, -7.275009)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoRooms/corridorToPassage2x2" unique_id=379181048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -8.999999, 12.924992)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="corridorTurn2x2" type="CSGBox3D" parent="protoRooms" unique_id=619328044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.1, 0, -7.325)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoRooms/corridorTurn2x2" unique_id=1555306624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -2.3000002)
+operation = 2
+size = Vector3(19, 19, 22.6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorTurn2x2" unique_id=1787195825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="protoRooms/corridorTurn2x2" unique_id=622153935]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D" unique_id=1454209523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D/CSGBox3D2" unique_id=1937452280]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D/CSGBox3D2" unique_id=1276268866]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D" unique_id=839057232]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 25.9, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D/CSGBox3D3" unique_id=81688130]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D/CSGBox3D3" unique_id=32796441]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D" unique_id=1914025516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, -2.9000006)
+operation = 2
+polygon = PackedVector2Array(-9, -9, -2.5, 6.4, 2.5, 6.4, 9, -9)
+depth = 7.8
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorTurn2x2/CSGCombiner3D" unique_id=766415370]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.399994, 19, -4.7683716e-07)
+operation = 2
+polygon = PackedVector2Array(-9, -9, -2.5, 6.4, 2.5, 6.4, 9, -9)
+depth = 7.8
+
 [node name="roomWall2x2" type="CSGBox3D" parent="protoRooms" unique_id=624159060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48.825)
 use_collision = true
@@ -269,6 +365,83 @@ operation = 2
 polygon = PackedVector2Array(-26.2, -0.5, -18, 15.400001, -5.5, 15.400001, 1, 0)
 depth = 20.0
 
+[node name="corridorTJunction2x2" type="CSGBox3D" parent="protoRooms" unique_id=1539299467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -172.02501)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=1815278392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=126838051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=933304043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2/CSGBox3D2" unique_id=516061784]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor1x2" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=118495768]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 13.100006)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=1034111927]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 25.9, -3.0517578e-05)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2/CSGBox3D3" unique_id=1845937540]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2/CSGBox3D3" unique_id=458737384]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2" unique_id=1369881195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10, 10)
+operation = 2
+polygon = PackedVector2Array(-17, 0, -10.5, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2" unique_id=1215203996]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.000008, 10, 8)
+operation = 2
+polygon = PackedVector2Array(-26.2, -0.5, -18, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="roomWall2x3" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2" unique_id=1072806965]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.5258789e-05)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2/roomWall2x3" unique_id=1642005049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2/roomWall2x3" unique_id=202999786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorTJunction2x2/roomWall2x3" unique_id=539812451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorTJunction2x2/roomWall2x3/CSGBox3D2" unique_id=1261910323]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
 [node name="roomCorner2x2" type="CSGBox3D" parent="protoRooms" unique_id=1485796273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -84.025)
 use_collision = true
@@ -315,153 +488,153 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="junction2x2" type="CSGBox3D" parent="protoRooms" unique_id=1121747615]
+[node name="corridorJunction2x2" type="CSGBox3D" parent="protoRooms" unique_id=1121747615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.449997, -9.5, 92.2)
 use_collision = true
 size = Vector3(20, 1, 20)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="protoRooms/junction2x2" unique_id=1861618023]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="protoRooms/corridorJunction2x2" unique_id=1861618023]
 transform = Transform3D(1, 0, 0, 0, 18.768002, 0, 0, 0, 1, -10.000008, 17.7, -10.000002)
 radius = 3.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D" unique_id=2128220966]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D" unique_id=2128220966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.6000004)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D" unique_id=809175651]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D" unique_id=809175651]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5999908, 0, 0.69999886)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="protoRooms/junction2x2" unique_id=1258617249]
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="protoRooms/corridorJunction2x2" unique_id=1258617249]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 18.768002, 0, 1, 0, 1.3113416e-07, 9.999992, 17.7, -10)
 radius = 3.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D4" unique_id=27694777]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D4" unique_id=27694777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.6000004)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D4" unique_id=1308238419]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D4" unique_id=1308238419]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5999908, 0, 0.69999886)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="protoRooms/junction2x2" unique_id=583042291]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="protoRooms/corridorJunction2x2" unique_id=583042291]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 18.768002, 0, 8.742278e-08, 0, -1, 9.999992, 17.7, 10)
 radius = 3.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D3" unique_id=1384566540]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D3" unique_id=1384566540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.6000004)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D3" unique_id=1314419642]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D3" unique_id=1314419642]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5999908, 0, 0.69999886)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="protoRooms/junction2x2" unique_id=1652499739]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="protoRooms/corridorJunction2x2" unique_id=1652499739]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 18.768002, 0, -1, 0, -4.371139e-08, -10.000008, 17.7, 10)
 radius = 3.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D2" unique_id=1409547494]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D2" unique_id=1409547494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.6000004)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGCylinder3D2" unique_id=172778868]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGCylinder3D2" unique_id=172778868]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5999908, 0, 0.69999886)
 operation = 2
 size = Vector3(7.7000003, 2, 3.2)
 
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoRooms/junction2x2" unique_id=1262030565]
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2" unique_id=1262030565]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.999992, 34.899998, 3.5000038)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGPolygon3D3" unique_id=888494231]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D3" unique_id=888494231]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 1.1500015, -13.099998, -10.349991)
 operation = 2
 size = Vector3(40.5, 5, 33.3)
 
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D3" unique_id=711304347]
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D3" unique_id=711304347]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -6.700001, -1, -12.499985)
 operation = 2
 polygon = PackedVector2Array(-4.5, -9.7, 0, 1, 5, 1.1, 9.5, -9.7)
 depth = 20.0
 
-[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D3" unique_id=1190278818]
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D3" unique_id=1190278818]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 7.000002, 0, -20)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGPolygon3D3/CSGPolygon3D4" unique_id=643977220]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D3/CSGPolygon3D4" unique_id=643977220]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1500053, -13.099998, -7.650009)
 operation = 2
 size = Vector3(40.5, 5, 33.3)
 
-[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D3/CSGPolygon3D4" unique_id=800703470]
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D3/CSGPolygon3D4" unique_id=800703470]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, 13.700003, -1, -7.5000153)
 operation = 2
 polygon = PackedVector2Array(-4.5, -9.7, 0, 1, 5, 1.1, 9.5, -9.7)
 depth = 20.0
 
-[node name="CSGPolygon3D6" type="CSGPolygon3D" parent="protoRooms/junction2x2" unique_id=1468232425]
+[node name="CSGPolygon3D6" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2" unique_id=1468232425]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 3.4999924, 34.899998, -9.999996)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/junction2x2/CSGPolygon3D6" unique_id=402828706]
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6" unique_id=402828706]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 1.1500015, -13.099998, -10.349995)
 operation = 2
 size = Vector3(40.5, 5, 33.3)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2/CSGPolygon3D6" unique_id=1447100994]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6" unique_id=1447100994]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 1.1500015, -13.099998, -10.349995)
 operation = 2
 size = Vector3(40.5, 5, 33.3)
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D6" unique_id=1712618841]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6" unique_id=1712618841]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.5, -1, -7.5)
 operation = 2
 polygon = PackedVector2Array(-4.5, -9.7, 0, 1, 5, 1.1, 9.5, -9.7)
 depth = 20.0
 
-[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D6" unique_id=1243139014]
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6" unique_id=1243139014]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 7, 0, -20)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2/CSGPolygon3D6/CSGPolygon3D5" unique_id=34479845]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6/CSGPolygon3D5" unique_id=34479845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8499985, -13.099998, -9.650005)
 operation = 2
 size = Vector3(40.5, 5, 33.3)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/junction2x2/CSGPolygon3D6/CSGPolygon3D5" unique_id=1290890263]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/corridorJunction2x2/CSGPolygon3D6/CSGPolygon3D5" unique_id=1290890263]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -6.5, -1, -12.5)
 operation = 2
 polygon = PackedVector2Array(-4.5, -9.7, 0, 1, 5, 1.1, 9.5, -9.7)
 depth = 20.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/junction2x2" unique_id=607386467]
+[node name="CSGBox3D" type="CSGBox3D" parent="protoRooms/corridorJunction2x2" unique_id=607386467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6293945e-06, 35.399998, 3.3499985)
 size = Vector3(5, 1, 13.3)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="protoRooms/junction2x2" unique_id=426703477]
+[node name="CSGBox3D4" type="CSGBox3D" parent="protoRooms/corridorJunction2x2" unique_id=426703477]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2500076, 35.399998, 0)
 size = Vector3(5, 1, 7.5)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/junction2x2" unique_id=1897118161]
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoRooms/corridorJunction2x2" unique_id=1897118161]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.2499924, 35.399998, 0)
 size = Vector3(5, 1, 7.5)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/junction2x2" unique_id=1314240014]
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorJunction2x2" unique_id=1314240014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6293945e-06, 35.399998, -6.25)
 size = Vector3(5, 1, 7.5)
 
@@ -504,6 +677,51 @@ size = Vector3(1, 5.8, 1)
 [node name="sidePlatform5" type="CSGBox3D" parent="protoRooms/sidePlatform" unique_id=1379928817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2.4, 0)
 size = Vector3(1, 5.8, 1)
+
+[node name="passage1x1" type="CSGBox3D" parent="protoRooms" unique_id=1881085289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.600014, 3.6, -139.40001)
+use_collision = true
+size = Vector3(10, 20, 10)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/passage1x1" unique_id=1542439704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x1" type="CSGBox3D" parent="protoRooms" unique_id=473952854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.60001, 3.6, -140.20001)
+use_collision = true
+size = Vector3(10, 20, 10)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/passageTurn1x1" unique_id=32611221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/passageTurn1x1" unique_id=422296750]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTJunction1x1" type="CSGBox3D" parent="protoRooms" unique_id=1469639717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.799995, 3.6, -140.20001)
+use_collision = true
+size = Vector3(10, 20, 10)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoRooms/passageTJunction1x1" unique_id=581748145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoRooms/passageTJunction1x1" unique_id=743343107]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 11.0
 
 [node name="protoDungeon" type="Node3D" parent="." unique_id=775423565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.200005, 8.7, -13.800003)
@@ -591,6 +809,64 @@ polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
 [node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 2/CSGBox3D2" unique_id=1132007343]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor2x12" type="CSGBox3D" parent="protoDungeon" unique_id=1683282640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.700005, 1.5500002, 52.675)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x12" unique_id=1687433013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x12" unique_id=486852385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x12" unique_id=21687665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x12/CSGBox3D2" unique_id=1522442291]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x12/CSGBox3D2" unique_id=218351240]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor2x2 8" type="CSGBox3D" parent="protoDungeon" unique_id=1376001024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.400017, 1.5500002, 52.675)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=128688377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=661296282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=710319447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 8/CSGBox3D2" unique_id=2142404555]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 8/CSGBox3D2" unique_id=1335583706]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
@@ -769,35 +1045,6 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
-[node name="corridor2x2 8" type="CSGBox3D" parent="protoDungeon" unique_id=78823372]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 79.39999, 1.5500002, 52.374996)
-use_collision = true
-size = Vector3(20, 20, 20)
-metadata/_edit_group_ = true
-
-[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=1220244363]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-operation = 2
-size = Vector3(20, 19, 18)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=494413617]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
-size = Vector3(20, 1, 5)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x2 8" unique_id=263366126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
-size = Vector3(20, 1, 5)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 8/CSGBox3D2" unique_id=1811078258]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
-polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
-depth = 20.0
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 8/CSGBox3D2" unique_id=1660142049]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
-polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
-depth = 20.0
-
 [node name="corridor2x2 7" type="CSGBox3D" parent="protoDungeon" unique_id=1126305153]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 79.39999, 1.5500002, 12.674979)
 use_collision = true
@@ -885,6 +1132,64 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
+[node name="corridor2x11" type="CSGBox3D" parent="protoDungeon" unique_id=1831991005]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 178.79999, 1.6499996, -67.02502)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x11" unique_id=31482862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x11" unique_id=1575369322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x11" unique_id=908573824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x11/CSGBox3D2" unique_id=1034121304]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x11/CSGBox3D2" unique_id=1978106503]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor2x10" type="CSGBox3D" parent="protoDungeon" unique_id=1049293733]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 178.79999, 1.6499996, -27.324978)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x10" unique_id=404082681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x10" unique_id=175673003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x10" unique_id=84128618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x10/CSGBox3D2" unique_id=1065799753]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x10/CSGBox3D2" unique_id=427917989]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
 [node name="corridor2x2 6" type="CSGBox3D" parent="protoDungeon" unique_id=194334227]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 99.39997, 1.5500002, -7.3250084)
 use_collision = true
@@ -910,35 +1215,6 @@ polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
 [node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 6/CSGBox3D2" unique_id=1860422644]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
-polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
-depth = 20.0
-
-[node name="corridor2x2 5" type="CSGBox3D" parent="protoDungeon" unique_id=1731389872]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 139.1, 1.5500002, -7.325001)
-use_collision = true
-size = Vector3(20, 20, 20)
-metadata/_edit_group_ = true
-
-[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridor2x2 5" unique_id=1323596340]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-operation = 2
-size = Vector3(20, 19, 18)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridor2x2 5" unique_id=1728951814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
-size = Vector3(20, 1, 5)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridor2x2 5" unique_id=2050799548]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
-size = Vector3(20, 1, 5)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 5/CSGBox3D2" unique_id=772426604]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
-polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
-depth = 20.0
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridor2x2 5/CSGBox3D2" unique_id=1315447675]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
@@ -1391,6 +1667,273 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
+[node name="roomWallEntrance2x5" type="CSGBox3D" parent="protoDungeon" unique_id=922556968]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.683342, 1.5500011, 52.64167)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=954155343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=234094721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=956261892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x5/CSGBox3D2" unique_id=79758857]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor1x2" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=394623879]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 13.100006)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=17968219]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 25.9, -3.0517578e-05)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x5/CSGBox3D3" unique_id=1650604408]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x5/CSGBox3D3" unique_id=1187308125]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=2041269697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10, 10)
+operation = 2
+polygon = PackedVector2Array(-17, 0, -10.5, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x5" unique_id=1863930451]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.000008, 10, 8)
+operation = 2
+polygon = PackedVector2Array(-26.2, -0.5, -18, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="roomCorner2x18" type="CSGBox3D" parent="protoDungeon" unique_id=1117380884]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.583351, 1.5500002, 32.64164)
+use_collision = true
+size = Vector3(20, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x18" unique_id=1432828550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x18" unique_id=1054602320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x18" unique_id=2024355981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x18/CSGBox3D2" unique_id=1816535949]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x18" unique_id=2084175383]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x18/roomCorner2x2" unique_id=2122812916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x18/roomCorner2x2" unique_id=1548293559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x18/roomCorner2x2" unique_id=541239077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x18/roomCorner2x2/CSGBox3D2" unique_id=2041516897]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x17" type="CSGBox3D" parent="protoDungeon" unique_id=1631965367]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -0.31664276, 1.5500002, 32.64164)
+use_collision = true
+size = Vector3(19.800001, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x17" unique_id=577686220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x17" unique_id=1633270779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x17" unique_id=127178849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x17/CSGBox3D2" unique_id=1036202080]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x17" unique_id=1172969779]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x17/roomCorner2x2" unique_id=1119070631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x17/roomCorner2x2" unique_id=2080255783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x17/roomCorner2x2" unique_id=817288318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x17/roomCorner2x2/CSGBox3D2" unique_id=1835850763]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x16" type="CSGBox3D" parent="protoDungeon" unique_id=1756770476]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 19.583336, 1.5500002, 72.64164)
+use_collision = true
+size = Vector3(19.800001, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x16" unique_id=388993806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x16" unique_id=1385746149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x16" unique_id=578631430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x16/CSGBox3D2" unique_id=1790163257]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x16" unique_id=878481687]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x16/roomCorner2x2" unique_id=1059355953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x16/roomCorner2x2" unique_id=259358695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x16/roomCorner2x2" unique_id=1268044150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x16/roomCorner2x2/CSGBox3D2" unique_id=1077811972]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x15" type="CSGBox3D" parent="protoDungeon" unique_id=2065248673]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.31667328, 1.5500002, 72.64164)
+use_collision = true
+size = Vector3(20, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x15" unique_id=1321086717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x15" unique_id=1723434438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x15" unique_id=548661037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x15/CSGBox3D2" unique_id=124868272]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x15" unique_id=68966882]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x15/roomCorner2x2" unique_id=514380042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x15/roomCorner2x2" unique_id=791522348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x15/roomCorner2x2" unique_id=756858298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x15/roomCorner2x2/CSGBox3D2" unique_id=1276790983]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomWall2x6" type="CSGBox3D" parent="protoDungeon" unique_id=569125077]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.3166275, 1.5500002, 52.64164)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomWall2x6" unique_id=1155904609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomWall2x6" unique_id=1732710226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomWall2x6" unique_id=1604359072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWall2x6/CSGBox3D2" unique_id=1011302968]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
 [node name="roomCorner2x7" type="CSGBox3D" parent="protoDungeon" unique_id=2058987485]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59.45002, 1.5500002, 92.108315)
 use_collision = true
@@ -1587,6 +2130,273 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
 
+[node name="roomWall2x5" type="CSGBox3D" parent="protoDungeon" unique_id=1423218438]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 178.85, 1.6499996, -107.024994)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomWall2x5" unique_id=218063862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomWall2x5" unique_id=675080507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomWall2x5" unique_id=136559026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWall2x5/CSGBox3D2" unique_id=660072185]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x14" type="CSGBox3D" parent="protoDungeon" unique_id=1300700815]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 158.85, 1.6499996, -107.025024)
+use_collision = true
+size = Vector3(20, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x14" unique_id=1173504318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x14" unique_id=1864128122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x14" unique_id=1025343524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x14/CSGBox3D2" unique_id=517700828]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x14" unique_id=1412952279]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x14/roomCorner2x2" unique_id=1613885673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x14/roomCorner2x2" unique_id=158178834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x14/roomCorner2x2" unique_id=1324593825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x14/roomCorner2x2/CSGBox3D2" unique_id=1690741765]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x13" type="CSGBox3D" parent="protoDungeon" unique_id=1001486680]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 158.85, 1.6499996, -87.125015)
+use_collision = true
+size = Vector3(19.800001, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x13" unique_id=1212100602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x13" unique_id=1360848721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x13" unique_id=1775315851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x13/CSGBox3D2" unique_id=1546136207]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x13" unique_id=1992973723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x13/roomCorner2x2" unique_id=1140284896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x13/roomCorner2x2" unique_id=594034274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x13/roomCorner2x2" unique_id=1103750370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x13/roomCorner2x2/CSGBox3D2" unique_id=2033607770]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x12" type="CSGBox3D" parent="protoDungeon" unique_id=1418618212]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 198.85, 1.6499996, -107.02501)
+use_collision = true
+size = Vector3(19.800001, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x12" unique_id=354126771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x12" unique_id=364752454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x12" unique_id=1032677599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x12/CSGBox3D2" unique_id=127057247]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x12" unique_id=1049773583]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x12/roomCorner2x2" unique_id=526288576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x12/roomCorner2x2" unique_id=934541273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x12/roomCorner2x2" unique_id=1349061716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x12/roomCorner2x2/CSGBox3D2" unique_id=1955186406]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x11" type="CSGBox3D" parent="protoDungeon" unique_id=1595216559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.85, 1.6499996, -87.12501)
+use_collision = true
+size = Vector3(20, 20, 19.4)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x11" unique_id=718423327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x11" unique_id=312732700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x11" unique_id=566321939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x11/CSGBox3D2" unique_id=56115511]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomCorner2x2" type="CSGBox3D" parent="protoDungeon/roomCorner2x11" unique_id=1889552788]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomCorner2x11/roomCorner2x2" unique_id=710812659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomCorner2x11/roomCorner2x2" unique_id=1889136738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomCorner2x11/roomCorner2x2" unique_id=1984793906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomCorner2x11/roomCorner2x2/CSGBox3D2" unique_id=1858836315]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="roomWallEntrance2x4" type="CSGBox3D" parent="protoDungeon" unique_id=1108186879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.85, 1.6500006, -87.02501)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1605774697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1150086323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=422698197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x4/CSGBox3D2" unique_id=2025678235]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor1x2" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1045235816]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 13.100006)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1154316658]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 25.9, -3.0517578e-05)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x4/CSGBox3D3" unique_id=1466464964]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x4/CSGBox3D3" unique_id=300958940]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1501713273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10, 10)
+operation = 2
+polygon = PackedVector2Array(-17, 0, -10.5, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/roomWallEntrance2x4" unique_id=1498875394]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.000008, 10, 8)
+operation = 2
+polygon = PackedVector2Array(-26.2, -0.5, -18, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
 [node name="roomCorner2x5" type="CSGBox3D" parent="protoDungeon" unique_id=1479692912]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59.45002, 1.5500002, -126.72502)
 use_collision = true
@@ -1657,3 +2467,850 @@ size = Vector3(20, 1, 5)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
 polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
 depth = 20.0
+
+[node name="corridorTurn2x3" type="CSGBox3D" parent="protoDungeon" unique_id=2011683046]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 178.75003, 1.6499996, -7.324997)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridorTurn2x3" unique_id=2027889113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -2.3000002)
+operation = 2
+size = Vector3(19, 19, 22.6)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridorTurn2x3" unique_id=841070517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="protoDungeon/corridorTurn2x3" unique_id=338945699]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D" unique_id=979485764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D/CSGBox3D2" unique_id=1321993664]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D/CSGBox3D2" unique_id=1297028628]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D" unique_id=116421400]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 25.9, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D/CSGBox3D3" unique_id=21654492]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D/CSGBox3D3" unique_id=628766087]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D" unique_id=553836183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, -2.9000006)
+operation = 2
+polygon = PackedVector2Array(-9, -9, -2.5, 6.4, 2.5, 6.4, 9, -9)
+depth = 7.8
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorTurn2x3/CSGCombiner3D" unique_id=1070304751]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.399994, 19, -4.7683716e-07)
+operation = 2
+polygon = PackedVector2Array(-9, -9, -2.5, 6.4, 2.5, 6.4, 9, -9)
+depth = 7.8
+
+[node name="corridorTJunction2x3" type="CSGBox3D" parent="protoDungeon" unique_id=1328058419]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 79.45002, 1.5500002, 52.07499)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=1367191375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=1811949484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=1768016469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3/CSGBox3D2" unique_id=749428608]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridor1x2" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=629528724]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 13.100006)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=2038992827]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 25.9, -3.0517578e-05)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3/CSGBox3D3" unique_id=1053084850]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3/CSGBox3D3" unique_id=888105336]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3" unique_id=1356346037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10, 10)
+operation = 2
+polygon = PackedVector2Array(-17, 0, -10.5, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3" unique_id=2142320557]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.000008, 10, 8)
+operation = 2
+polygon = PackedVector2Array(-26.2, -0.5, -18, 15.400001, -5.5, 15.400001, 1, 0)
+depth = 20.0
+
+[node name="roomWall2x3" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3" unique_id=613035640]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.5258789e-05)
+use_collision = true
+size = Vector3(20, 20, 20)
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3/roomWall2x3" unique_id=1763230128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.3500023)
+operation = 2
+size = Vector3(20, 19, 20.7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3/roomWall2x3" unique_id=1967565043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.9, -3.75)
+size = Vector3(20, 1, 12.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridorTJunction2x3/roomWall2x3" unique_id=1956475688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorTJunction2x3/roomWall2x3/CSGBox3D2" unique_id=965650497]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="corridorToPassage2x3" type="CSGBox3D" parent="protoDungeon" unique_id=1739324011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.85, 1.5500002, -7.324995)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x3" unique_id=765540962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x3" unique_id=91335149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x3" unique_id=424412909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x3/CSGBox3D2" unique_id=1551734898]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x3/CSGBox3D2" unique_id=7130979]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x3" unique_id=2058184637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -8.999999, -7.275009)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x3" unique_id=678933779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -8.999999, 12.924992)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="corridorToPassage2x4" type="CSGBox3D" parent="protoDungeon" unique_id=1152530916]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 178.85, 1.6500006, -47.324997)
+use_collision = true
+size = Vector3(20, 20, 20)
+metadata/_edit_group_ = true
+
+[node name="corridor1x1" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x4" unique_id=1883280461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(20, 19, 18)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x4" unique_id=336614621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="protoDungeon/corridorToPassage2x4" unique_id=136610705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.899998, 0)
+size = Vector3(20, 1, 5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x4/CSGBox3D2" unique_id=1494319208]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, -0.4999962, 3.5)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x4/CSGBox3D2" unique_id=210739958]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -10.000008, -0.4999962, -3.5000005)
+polygon = PackedVector2Array(-6.5, -15.400001, 1, 1, 1, 0, -5.5, -15.400001)
+depth = 20.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x4" unique_id=640167464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -8.999999, -7.275009)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="protoDungeon/corridorToPassage2x4" unique_id=104333895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -8.999999, 12.924992)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x2" type="CSGBox3D" parent="protoDungeon" unique_id=580250012]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 153.85, 2.5500002, 7.6999965)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x2" unique_id=1299204712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x3" type="CSGBox3D" parent="protoDungeon" unique_id=166741933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.84998, 2.5500002, 17.699991)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x3" unique_id=1070274865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x3" unique_id=1708099427]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x4" type="CSGBox3D" parent="protoDungeon" unique_id=1172007133]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 163.84998, 2.5500002, 17.699991)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x4" unique_id=1731303465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x4" unique_id=93384165]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x6" type="CSGBox3D" parent="protoDungeon" unique_id=1587599076]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 213.84998, 2.5500002, 37.69999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x6" unique_id=2141474999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x6" unique_id=1659388248]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x7" type="CSGBox3D" parent="protoDungeon" unique_id=730873495]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 213.84998, 2.5500002, -52.30001)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x7" unique_id=1314847034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x7" unique_id=1219597517]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x5" type="CSGBox3D" parent="protoDungeon" unique_id=1098573928]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 163.84998, 2.5500002, 7.699991)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x5" unique_id=1236445122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x5" unique_id=1674848]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passage1x3" type="CSGBox3D" parent="protoDungeon" unique_id=1941858958]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 153.84998, 2.5500002, 27.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x3" unique_id=1403749819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x4" type="CSGBox3D" parent="protoDungeon" unique_id=869131263]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 163.84998, 2.5500002, 37.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x4" unique_id=532331399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x5" type="CSGBox3D" parent="protoDungeon" unique_id=676203223]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 173.84998, 2.5500002, 37.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x5" unique_id=959661803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x6" type="CSGBox3D" parent="protoDungeon" unique_id=1426312729]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 183.84998, 2.5500002, 37.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x6" unique_id=1894773090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x7" type="CSGBox3D" parent="protoDungeon" unique_id=773183238]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 193.84998, 2.5500002, 37.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x7" unique_id=1769329758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x8" type="CSGBox3D" parent="protoDungeon" unique_id=1824686247]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 203.84998, 2.5500002, 37.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x8" unique_id=924658136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x9" type="CSGBox3D" parent="protoDungeon" unique_id=1677178853]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 213.84998, 2.5500002, 57.69999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x9" unique_id=305522891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x9" unique_id=584703158]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passage1x24" type="CSGBox3D" parent="protoDungeon" unique_id=588943539]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 163.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x24" unique_id=53203046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x25" type="CSGBox3D" parent="protoDungeon" unique_id=240484342]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 173.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x25" unique_id=1467265735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x34" type="CSGBox3D" parent="protoDungeon" unique_id=2146511123]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 153.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x34" unique_id=896600258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x26" type="CSGBox3D" parent="protoDungeon" unique_id=1806306723]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 183.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x26" unique_id=1220806005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x27" type="CSGBox3D" parent="protoDungeon" unique_id=1281382159]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 193.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x27" unique_id=82697465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x28" type="CSGBox3D" parent="protoDungeon" unique_id=1082259643]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 203.84998, 2.5500002, 57.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x28" unique_id=935622343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x10" type="CSGBox3D" parent="protoDungeon" unique_id=992804245]
+transform = Transform3D(7.5497894e-08, 0, -1, 0, 1, 0, 1, 0, 7.5497894e-08, 213.84998, 2.5500002, 47.69999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x10" unique_id=1505186022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x10" unique_id=2020644654]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x11" type="CSGBox3D" parent="protoDungeon" unique_id=178181055]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 143.84998, 2.5500002, 47.69999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x11" unique_id=611737957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x11" unique_id=907840604]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTurn1x12" type="CSGBox3D" parent="protoDungeon" unique_id=1021290669]
+transform = Transform3D(-1.6292067e-07, 0, 1, 0, 1, 0, -1, 0, -1.6292067e-07, 143.84998, 2.5500002, 57.69999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x12" unique_id=299285592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x12" unique_id=13058159]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passage1x29" type="CSGBox3D" parent="protoDungeon" unique_id=2033519042]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 163.84998, 2.5500002, 47.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x29" unique_id=839764000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x30" type="CSGBox3D" parent="protoDungeon" unique_id=141155870]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 173.84998, 2.5500002, 47.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x30" unique_id=1884003479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x31" type="CSGBox3D" parent="protoDungeon" unique_id=466282612]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 183.84998, 2.5500002, 47.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x31" unique_id=1718759009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x32" type="CSGBox3D" parent="protoDungeon" unique_id=1786862992]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 193.84998, 2.5500002, 47.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x32" unique_id=1842432794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x33" type="CSGBox3D" parent="protoDungeon" unique_id=1874919982]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 203.84998, 2.5500002, 47.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x33" unique_id=707493834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x9" type="CSGBox3D" parent="protoDungeon" unique_id=1537139151]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, 27.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x9" unique_id=701078355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x10" type="CSGBox3D" parent="protoDungeon" unique_id=568221927]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, 17.700024)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x10" unique_id=1307172026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x11" type="CSGBox3D" parent="protoDungeon" unique_id=251571607]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, 7.7000237)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x11" unique_id=1570491069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x12" type="CSGBox3D" parent="protoDungeon" unique_id=678458677]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, -2.2999763)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x12" unique_id=1774710510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x13" type="CSGBox3D" parent="protoDungeon" unique_id=933003162]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, -12.299976)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x13" unique_id=574994582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x14" type="CSGBox3D" parent="protoDungeon" unique_id=1739384609]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, -22.299976)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x14" unique_id=637058636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x15" type="CSGBox3D" parent="protoDungeon" unique_id=2061776820]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, -32.299976)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x15" unique_id=2135389662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x16" type="CSGBox3D" parent="protoDungeon" unique_id=916381206]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 213.84998, 2.5500002, -42.299976)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x16" unique_id=235386255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x17" type="CSGBox3D" parent="protoDungeon" unique_id=1631916129]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 203.84998, 2.5500002, -52.299973)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x17" unique_id=703084881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x18" type="CSGBox3D" parent="protoDungeon" unique_id=793158523]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 193.84998, 2.5500002, -52.299973)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x18" unique_id=633892032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x8" type="CSGBox3D" parent="protoDungeon" unique_id=280055747]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 133.84998, 2.6500006, -42.29998)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x8" unique_id=1692675906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x8" unique_id=656561127]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passage1x19" type="CSGBox3D" parent="protoDungeon" unique_id=454030728]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 153.84998, 2.6500006, -42.299988)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x19" unique_id=1588941976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x23" type="CSGBox3D" parent="protoDungeon" unique_id=342027356]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 163.84998, 2.6500006, -42.299988)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x23" unique_id=854457564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x20" type="CSGBox3D" parent="protoDungeon" unique_id=1140404026]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 143.84998, 2.6500006, -42.299988)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x20" unique_id=1518795492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x21" type="CSGBox3D" parent="protoDungeon" unique_id=505683265]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 133.85, 2.6500006, -32.299984)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x21" unique_id=170975294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passage1x22" type="CSGBox3D" parent="protoDungeon" unique_id=1080595621]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 133.85, 2.6500006, -22.299984)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passage1x22" unique_id=1403844524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 10.0
+
+[node name="passageTurn1x2" type="CSGBox3D" parent="protoDungeon" unique_id=1382482426]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 143.84998, 2.5500002, 7.6999884)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x2" unique_id=989475167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTurn1x2" unique_id=338409461]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="passageTJunction1x2" type="CSGBox3D" parent="protoDungeon" unique_id=1918755640]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 153.85, 2.5500002, 37.59999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTJunction1x2" unique_id=1485770421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTJunction1x2" unique_id=1370838887]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 11.0
+
+[node name="passageTJunction1x3" type="CSGBox3D" parent="protoDungeon" unique_id=2028818207]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 153.85, 2.5500002, 47.59999)
+use_collision = true
+size = Vector3(10, 20, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="protoDungeon/passageTJunction1x3" unique_id=376353202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -9.999999, 5)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 9.0
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="protoDungeon/passageTJunction1x3" unique_id=681247859]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0200043, -9.999999, 3)
+operation = 2
+polygon = PackedVector2Array(-1.9, 6.9, 3, 12, 7.9, 6.8, 7, 0, -1, 0)
+depth = 11.0
