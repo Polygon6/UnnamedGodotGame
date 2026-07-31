@@ -4,10 +4,12 @@ extends CharacterBody3D
 const g = Vector3(0, 9.8, 0)
 var jUp = 8
 
-@export var s : float     # = 0.02
+var s = 0.02
 
 @onready var atlas = $axis/atlas
 @onready var axis = $axis
+
+@onready var cam = $axis/atlas/Camera3D
 
 @onready var rayR = $axis/rayR
 @onready var rayL = $axis/rayL
@@ -45,9 +47,9 @@ var states = {
 		"acceleration" : 0.1
 	},
 	"wallrun":{
-		"pseudoGravity" : g,
 		"pullStrength" : 1,
 		"speedLoss" : 0.003,
+
 		"detachAngle" : 80,
 		"attachAngle1" : -60,
 		"attachAngle2" : 10,
@@ -77,6 +79,17 @@ func _on_timeout():
 		timer.stop()
 
 func _physics_process(delta: float) -> void:
+	#provisional sensetivity settings
+	if Input.is_action_just_pressed("k"):
+		s += 0.002
+	if Input.is_action_just_pressed("l"):
+		s = clamp(s - 0.002, 0.001, 999)
+
+	#camera effects
+	handledWallrunCam()
+	handleCamSpeedVFX()
+	handleSlideLowering()
+
 	match state:
 		states.air:
 			#gravity
@@ -209,7 +222,7 @@ func _physics_process(delta: float) -> void:
 				lastNormal = wallDirection
 
 			#gravity
-			velocity -= (state.pseudoGravity * delta)
+			velocity -= (g * delta)
 
 			#friction
 			velocity.x = velocity.x * (1-state.speedLoss)
@@ -250,3 +263,37 @@ func _physics_process(delta: float) -> void:
 					wallDirection = null
 
 			move_and_slide()
+
+func handledWallrunCam():
+	if state == states.wallrun:
+		if ray == rayR:
+			cam.rotation = Vector3(0, 0, deg_to_rad(5))
+		else:
+			cam.rotation = Vector3(0, 0, deg_to_rad(-5))
+	else:
+		cam.rotation = Vector3(0, 0, 0)
+
+func handleCamSpeedVFX():
+	#quadratic equation
+	var x = velocity.length()*-1
+	var a = 0.172616
+	var b = -4.20233
+	var c = 100
+
+	if velocity.length() > 14:
+		if state == states.slide:
+			cam.fov = clamp((a*(x*x) - b*x + c), 75, 100)*1.1
+		else:
+			cam.fov = clamp((a*(x*x) - b*x + c), 75, 100)
+	else:
+		if state == states.slide:
+			cam.fov = 75*1.1
+		else:
+			cam.fov = 75
+
+func handleSlideLowering():
+	if state == states.slide:
+		scale = Vector3(1, 0.5, 1)
+		move_and_collide(Vector3(0, -1, 0))
+	else:
+		scale = Vector3(1, 1, 1)

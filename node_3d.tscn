@@ -132,7 +132,6 @@ sides = 40
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
 script = ExtResource("1_a202f")
-s = 0.02
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1816828782]
