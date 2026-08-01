@@ -11,16 +11,30 @@ var s = 0.02
 
 @onready var cam = $axis/atlas/Camera3D
 
+@onready var col = $CollisionShape3D
+
 @onready var rayR = $axis/rayR
 @onready var rayL = $axis/rayL
 
 @onready var timer = $Timer
 
+#FOV
+var targetFOV = 75
+var FOVchangeSpeed = 0.25
+
 #for general movement
 var inputDirection
 var direction
 
+#for slide
+var slideScale = 0.25
+var slideScalingSpeed = 0.06
+var slideFOVcoefficient = 1.1
+
 #for wallrun
+var wallrunTilt = 5
+var wallrunTiltChangeRate = 0.4
+
 var wallAngle
 var wallDirection
 var ray
@@ -38,8 +52,9 @@ var states = {
 	},
 	"slide":{
 		"moveSpeed" : 0.3,
+		"crouchSpeed" : 3,
 		"speedLoss" : 0.006,
-		"stopSpeed" : 3,
+		"stopSpeed" : 4.5,
 	},
 	"sprint":{
 		"moveSpeed" : 0.5,
@@ -89,6 +104,7 @@ func _physics_process(delta: float) -> void:
 	handledWallrunCam()
 	handleCamSpeedVFX()
 	handleSlideLowering()
+	setFOV()
 
 	match state:
 		states.air:
@@ -138,7 +154,7 @@ func _physics_process(delta: float) -> void:
 				velocity.z = direction.z * state.moveSpeed
 			else:
 				velocity = Vector3(0, velocity.y, 0)
-				
+
 			#update state and handle jump
 			if not is_on_floor():
 				state = states.air
@@ -165,6 +181,14 @@ func _physics_process(delta: float) -> void:
 
 			if velocity.length() < state.stopSpeed:
 				velocity = Vector3(0, velocity.y, 0)
+
+			#crouch
+			if velocity == Vector3(0, velocity.y, 0):
+				if direction:
+					velocity.x = direction.x * state.crouchSpeed
+					velocity.z = direction.z * state.crouchSpeed
+				else:
+					velocity = Vector3(0, velocity.y, 0)
 
 			#update state and handle jump
 			if not is_on_floor():
@@ -264,15 +288,6 @@ func _physics_process(delta: float) -> void:
 
 			move_and_slide()
 
-func handledWallrunCam():
-	if state == states.wallrun:
-		if ray == rayR:
-			cam.rotation = Vector3(0, 0, deg_to_rad(5))
-		else:
-			cam.rotation = Vector3(0, 0, deg_to_rad(-5))
-	else:
-		cam.rotation = Vector3(0, 0, 0)
-
 func handleCamSpeedVFX():
 	#quadratic equation
 	var x = velocity.length()*-1
@@ -282,18 +297,36 @@ func handleCamSpeedVFX():
 
 	if velocity.length() > 14:
 		if state == states.slide:
-			cam.fov = clamp((a*(x*x) - b*x + c), 75, 100)*1.1
+			targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)*slideFOVcoefficient
 		else:
-			cam.fov = clamp((a*(x*x) - b*x + c), 75, 100)
+			targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)
 	else:
 		if state == states.slide:
-			cam.fov = 75*1.1
+			targetFOV = 75*slideFOVcoefficient
 		else:
-			cam.fov = 75
+			targetFOV = 75
+
+func handledWallrunCam():
+	if state == states.wallrun:
+		if ray == rayR:
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + wallrunTiltChangeRate, wallrunTilt*-1, wallrunTilt))
+		else:
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - wallrunTiltChangeRate, wallrunTilt*-1, wallrunTilt))
+	else:
+		if ray == rayR:
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - wallrunTiltChangeRate, 0, wallrunTilt))
+		else:
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + wallrunTiltChangeRate, wallrunTilt*-1, 0))
 
 func handleSlideLowering():
 	if state == states.slide:
-		scale = Vector3(1, 0.5, 1)
+		col.scale.y = clamp(col.scale.y - slideScalingSpeed, slideScale, 1)
 		move_and_collide(Vector3(0, -1, 0))
 	else:
-		scale = Vector3(1, 1, 1)
+		col.scale.y = clamp(col.scale.y + slideScalingSpeed, slideScale, 1)
+
+func setFOV():
+	if cam.fov < targetFOV:
+		cam.fov = clamp(cam.fov + (FOVchangeSpeed * (targetFOV - cam.fov)), cam.fov, targetFOV)
+	elif cam.fov > targetFOV:
+		cam.fov = clamp(cam.fov - (FOVchangeSpeed * (cam.fov - targetFOV)), targetFOV, cam.fov)
