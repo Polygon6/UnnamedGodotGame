@@ -1,6 +1,6 @@
 CSGBox3D
-CSGPolygon3D
 CSGCombiner3D
+CSGPolygon3D
 CSGCylinder3D
 Node3D
 Timer
