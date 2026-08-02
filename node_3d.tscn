@@ -133,8 +133,16 @@ sides = 40
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3333333, -0.5666666, 0)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="walls" unique_id=1023461955]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.933333, -1.7333335, -1.1666665)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.000004, -1.7333335, -9.433332)
 size = Vector3(3, 1, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="walls" unique_id=362391181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.166668, -1.7333335, 1.8500006)
+size = Vector3(3, 1, 0.1)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="walls" unique_id=917545875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.53334, -1.7333335, 9.350004)
+size = Vector3(3, 1, 0.1)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1365680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9500003, 2.65, 0.65000004)
@@ -790,7 +798,7 @@ operation = 2
 size = Vector3(24.1, 42.100002, 10)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="protoRooms/corridorToPassageWall1x1" unique_id=1363820847]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -94.74999, 5.950002, -67.1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -84.549995, 5.950002, -67.1)
 operation = 2
 size = Vector3(24.1, 42.100002, 10)
 

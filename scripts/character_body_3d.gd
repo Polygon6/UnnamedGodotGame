@@ -321,7 +321,6 @@ func handledWallrunCam():
 func handleSlideLowering():
 	if state == states.slide:
 		col.scale.y = clamp(col.scale.y - slideScalingSpeed, slideScale, 1)
-		move_and_collide(Vector3(0, -1, 0))
 	else:
 		col.scale.y = clamp(col.scale.y + slideScalingSpeed, slideScale, 1)
 
