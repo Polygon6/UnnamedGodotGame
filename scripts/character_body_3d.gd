@@ -31,14 +31,8 @@ var direction
 
 #for slide
 var defaultHeight
-var slideHeight = 0.6
-var slideScalingSpeed = 0.08
-var slideFOVcoefficient = 1.1
 
 #for wallrun
-var wallrunTilt = 5
-var wallrunTiltChangeRate = 0.4
-
 var wallAngle
 var wallDirection
 var ray
@@ -50,20 +44,31 @@ var lastNormal
 var states = {
 	"walk":{
 		"moveSpeed" : 9,
+
+		"FOVcoefficient" : 1,
 	},
 	"air":{
 		"moveSpeed" : 0.3,
+
+		"FOVcoefficient" : 1,
 	},
 	"slide":{
 		"moveSpeed" : 0.3,
 		"crouchSpeed" : 3,
 		"speedLoss" : 0.006,
 		"stopSpeed" : 4.5,
+
+		"slideHeight" : 0.6,
+		"slideScalingSpeed" : 0.08,
+		
+		"FOVcoefficient" : 1.05,
 	},
 	"sprint":{
 		"moveSpeed" : 0.5,
 		"maxSpeed" : 20,
-		"acceleration" : 0.1
+		"acceleration" : 0.1,
+
+		"FOVcoefficient" : 1.1,
 	},
 	"wallrun":{
 		"pullStrength" : 1,
@@ -76,6 +81,11 @@ var states = {
 		"walljumpUp" : 8,
 		"walljumpForward" : 6,
 		"walljumpAway" : 16,
+
+		"wallrunTilt" : 5,
+		"wallrunTiltChangeRate" : 0.4,
+
+		"FOVcoefficient" : 1,
 	},
 }
 
@@ -179,7 +189,10 @@ func _physics_process(delta: float) -> void:
 			direction = (axis.transform.basis * Vector3(inputDirection.x, 0, inputDirection.y)).normalized()
 
 			if direction:
-				velocity = (velocity + direction*state.moveSpeed).normalized()*velocity.length()
+				if (velocity + direction).length() < velocity.length():
+					velocity += direction*state.moveSpeed
+				else:
+					velocity = (velocity + direction*state.moveSpeed).normalized()*velocity.length()
 
 			#friction
 			velocity = velocity * (1-state.speedLoss)
@@ -305,33 +318,27 @@ func handleCamSpeedVFX():
 	var c = 100
 
 	if velocity.length() > 14:
-		if state == states.slide:
-			targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)*slideFOVcoefficient
-		else:
-			targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)
+		targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)*state.FOVcoefficient
 	else:
-		if state == states.slide:
-			targetFOV = 75*slideFOVcoefficient
-		else:
-			targetFOV = 75
+		targetFOV = 75*state.FOVcoefficient
 
 func handledWallrunCam():
 	if state == states.wallrun:
 		if ray == rayR:
-			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + wallrunTiltChangeRate, wallrunTilt*-1, wallrunTilt))
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + states.wallrun.wallrunTiltChangeRate, states.wallrun.wallrunTilt*-1, states.wallrun.wallrunTilt))
 		else:
-			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - wallrunTiltChangeRate, wallrunTilt*-1, wallrunTilt))
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - states.wallrun.wallrunTiltChangeRate, states.wallrun.wallrunTilt*-1, states.wallrun.wallrunTilt))
 	else:
 		if ray == rayR:
-			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - wallrunTiltChangeRate, 0, wallrunTilt))
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) - states.wallrun.wallrunTiltChangeRate, 0, states.wallrun.wallrunTilt))
 		else:
-			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + wallrunTiltChangeRate, wallrunTilt*-1, 0))
+			cam.rotation.z = deg_to_rad(clamp(rad_to_deg(cam.rotation.z) + states.wallrun.wallrunTiltChangeRate, states.wallrun.wallrunTilt*-1, 0))
 
 func handleSlideLowering():
 	if state == states.slide:
-		col.shape.height = clamp(col.shape.height - slideScalingSpeed, slideHeight, defaultHeight)
+		col.shape.height = clamp(col.shape.height - states.slide.slideScalingSpeed, states.slide.slideHeight, defaultHeight)
 	else:
-		col.shape.height = clamp(col.shape.height + slideScalingSpeed, slideHeight, defaultHeight)
+		col.shape.height = clamp(col.shape.height + states.slide.slideScalingSpeed, states.slide.slideHeight, defaultHeight)
 
 	floorRay.position.y = (col.shape.height/2) * -1
 	roofRay.position.y = (col.shape.height/2)
