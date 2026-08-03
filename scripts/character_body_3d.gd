@@ -13,6 +13,9 @@ var s = 0.02
 
 @onready var col = $CollisionShape3D
 
+@onready var floorRay = $floorRay
+@onready var roofRay = $roofRay
+
 @onready var rayR = $axis/rayR
 @onready var rayL = $axis/rayL
 
@@ -27,8 +30,9 @@ var inputDirection
 var direction
 
 #for slide
-var slideScale = 0.25
-var slideScalingSpeed = 0.06
+var defaultHeight
+var slideHeight = 0.6
+var slideScalingSpeed = 0.08
 var slideFOVcoefficient = 1.1
 
 #for wallrun
@@ -86,6 +90,7 @@ func _unhandled_input(event: InputEvent):
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	timer.timeout.connect(_on_timeout)
+	defaultHeight = col.shape.height
 
 func _on_timeout():
 	if wallrunCooldown > 0:
@@ -191,16 +196,20 @@ func _physics_process(delta: float) -> void:
 					velocity = Vector3(0, velocity.y, 0)
 
 			#update state and handle jump
-			if not is_on_floor():
-				state = states.air
-			elif Input.is_action_just_pressed("space"):
-				velocity.y = jUp
-				state = states.air
-			elif Input.is_action_just_released("ctrl"):
-				if Input.is_action_pressed("shift"):
-					state = states.sprint
-				else:
-					state = states.walk
+			floorRay.force_raycast_update()
+			roofRay.force_raycast_update()
+			
+			if not roofRay.is_colliding():
+				if (not floorRay.is_colliding()) && (not is_on_floor()):
+					state = states.air
+				elif Input.is_action_just_pressed("space"):
+					velocity.y = jUp
+					state = states.air
+				elif not Input.is_action_pressed("ctrl"):
+					if Input.is_action_pressed("shift"):
+						state = states.sprint
+					else:
+						state = states.walk
 
 			move_and_slide()
 
@@ -289,7 +298,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func handleCamSpeedVFX():
-	#quadratic equation
+	#for quadratic equation
 	var x = velocity.length()*-1
 	var a = 0.172616
 	var b = -4.20233
@@ -320,9 +329,13 @@ func handledWallrunCam():
 
 func handleSlideLowering():
 	if state == states.slide:
-		col.scale.y = clamp(col.scale.y - slideScalingSpeed, slideScale, 1)
+		col.shape.height = clamp(col.shape.height - slideScalingSpeed, slideHeight, defaultHeight)
 	else:
-		col.scale.y = clamp(col.scale.y + slideScalingSpeed, slideScale, 1)
+		col.shape.height = clamp(col.shape.height + slideScalingSpeed, slideHeight, defaultHeight)
+
+	floorRay.position.y = (col.shape.height/2) * -1
+	roofRay.position.y = (col.shape.height/2)
+	roofRay.target_position.y = defaultHeight - col.shape.height
 
 func setFOV():
 	if cam.fov < targetFOV:
