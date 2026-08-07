@@ -22,8 +22,11 @@ var s = 0.02
 @onready var timer = $Timer
 
 #FOV
-var targetFOV = 75
-var FOVchangeSpeed = 0.25
+var baseFOV = 75
+var maxFOV = 110
+var FOVchangeFloor = 14
+var FOVchangeCeiling = 30
+var FOVchangeSpeed = 0.3
 
 #for general movement
 var inputDirection
@@ -93,9 +96,15 @@ var state = states.air
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
-		axis.rotate_y(-event.relative.x*s)
+		#up down
 		atlas.rotate_x(-event.relative.y*s)
 		atlas.rotation.x = clamp(atlas.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+		#sides
+		if state != states.sprint:
+			axis.rotate_y(-event.relative.x*s)
+		else:
+			axis.rotate_y(-event.relative.x*s)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -119,7 +128,6 @@ func _physics_process(delta: float) -> void:
 	handledWallrunCam()
 	handleCamSpeedVFX()
 	handleSlideLowering()
-	setFOV()
 
 	match state:
 		states.air:
@@ -227,7 +235,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 		states.sprint:
-			#get the input direction and handle the movement and friction
+			#handle the movement
 			inputDirection = Input.get_vector("a", "d", "w", "s")
 			direction = (axis.transform.basis * Vector3(inputDirection.x, 0, inputDirection.y)).normalized()
 
@@ -237,7 +245,10 @@ func _physics_process(delta: float) -> void:
 					velocity.x += direction.x * state.acceleration
 					velocity.z += direction.z * state.acceleration
 				elif velocity.length() > state.maxSpeed:
-					velocity = velocity.normalized()*state.maxSpeed
+					velocity = velocity.normalized() * state.maxSpeed
+
+				if velocity.length() < states.walk.moveSpeed:
+					velocity = velocity.normalized() * states.walk.moveSpeed
 
 				#turn
 				velocity = (velocity + direction*state.moveSpeed).normalized()*velocity.length()
@@ -311,16 +322,11 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func handleCamSpeedVFX():
-	#for quadratic equation
-	var x = velocity.length()*-1
-	var a = 0.172616
-	var b = -4.20233
-	var c = 100
-
-	if velocity.length() > 14:
-		targetFOV = clamp((a*(x*x) - b*x + c), 75, 100)*state.FOVcoefficient
-	else:
-		targetFOV = 75*state.FOVcoefficient
+	cam.fov = lerp(
+		cam.fov,
+	 	float(( baseFOV + (clamp(velocity.length()-FOVchangeFloor, 0, FOVchangeCeiling)/FOVchangeCeiling)*(maxFOV-baseFOV) )     *state.FOVcoefficient),
+		FOVchangeSpeed
+		)
 
 func handledWallrunCam():
 	if state == states.wallrun:
@@ -343,9 +349,3 @@ func handleSlideLowering():
 	floorRay.position.y = (col.shape.height/2) * -1
 	roofRay.position.y = (col.shape.height/2)
 	roofRay.target_position.y = defaultHeight - col.shape.height
-
-func setFOV():
-	if cam.fov < targetFOV:
-		cam.fov = clamp(cam.fov + (FOVchangeSpeed * (targetFOV - cam.fov)), cam.fov, targetFOV)
-	elif cam.fov > targetFOV:
-		cam.fov = clamp(cam.fov - (FOVchangeSpeed * (cam.fov - targetFOV)), targetFOV, cam.fov)
